@@ -10,3 +10,7 @@ resource "aws_athena_workgroup" "this" {
     }
   }
 }
+
+resource "aws_glue_catalog_database" "this" {
+  name = var.database_name
+}
