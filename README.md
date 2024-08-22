@@ -30,6 +30,8 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_alb_access_logs_table_name"></a> [alb\_access\_logs\_table\_name](#input\_alb\_access\_logs\_table\_name) | The table name for the alb access logs | `string` | `"alb_access_logs"` | no |
+| <a name="input_alb_connection_logs_table_name"></a> [alb\_connection\_logs\_table\_name](#input\_alb\_connection\_logs\_table\_name) | The table name for the alb connection logs | `string` | `"alb_connection_logs"` | no |
 | <a name="input_database_name"></a> [database\_name](#input\_database\_name) | The name of the Athena database. | `string` | n/a | yes |
 | <a name="input_query_results_bucket"></a> [query\_results\_bucket](#input\_query\_results\_bucket) | The S3 bucket where Athena query results will be stored. | `string` | n/a | yes |
 | <a name="input_s3_bucket_name"></a> [s3\_bucket\_name](#input\_s3\_bucket\_name) | The name of the S3 bucket where ALB logs are stored. | `string` | n/a | yes |
@@ -37,5 +39,13 @@ No modules.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_alb_access_logs_location"></a> [alb\_access\_logs\_location](#output\_alb\_access\_logs\_location) | Location in S3 where ALB access logs are stored |
+| <a name="output_alb_connection_logs_location"></a> [alb\_connection\_logs\_location](#output\_alb\_connection\_logs\_location) | Location in S3 where ALB connection logs are stored |
+| <a name="output_alb_logs_bucket_name"></a> [alb\_logs\_bucket\_name](#output\_alb\_logs\_bucket\_name) | S3 bucket name where ALB logs are retrieved |
+| <a name="output_athena_workgroup_name"></a> [athena\_workgroup\_name](#output\_athena\_workgroup\_name) | Name of the Athena Workgroup |
+| <a name="output_glue_catalog_database_name"></a> [glue\_catalog\_database\_name](#output\_glue\_catalog\_database\_name) | Name of the Glue catalog database |
+| <a name="output_glue_table_names"></a> [glue\_table\_names](#output\_glue\_table\_names) | Names of the Glue tables under the database |
+| <a name="output_query_results_bucket_name"></a> [query\_results\_bucket\_name](#output\_query\_results\_bucket\_name) | S3 bucket name where Athena query results are stored |
 <!-- END_TF_DOCS -->
