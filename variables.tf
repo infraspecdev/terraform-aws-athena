@@ -17,3 +17,15 @@ variable "s3_bucket_name" {
   description = "The name of the S3 bucket where ALB logs are stored."
   type        = string
 }
+
+variable "alb_access_logs_table_name" {
+  description = "The table name for the alb access logs"
+  type        = string
+  default     = "alb_access_logs"
+}
+
+variable "alb_connection_logs_table_name" {
+  description = "The table name for the alb connection logs"
+  type        = string
+  default     = "alb_connection_logs"
+}

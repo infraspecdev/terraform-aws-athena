@@ -4,7 +4,7 @@ locals {
   publish_cloudwatch_metrics_enabled_value = false
 
   tables = {
-    alb_access_logs = {
+    (var.alb_access_logs_table_name) = {
       location                     = "s3://${var.s3_bucket_name}/alb-access-logs/"
       ser_de_name                  = "alb-access-logs-serde"
       ser_de_serialization_library = "org.apache.hadoop.hive.serde2.RegexSerDe"
@@ -54,7 +54,7 @@ locals {
       }
     }
 
-    alb_connection_logs = {
+    (var.alb_connection_logs_table_name) = {
       location                     = "s3://${var.s3_bucket_name}/alb-connection-logs/"
       ser_de_name                  = "alb-connection-logs-serde"
       ser_de_serialization_library = "org.apache.hadoop.hive.serde2.RegexSerDe"
