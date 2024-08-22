@@ -30,12 +30,12 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_alb_access_logs_table_name"></a> [alb\_access\_logs\_table\_name](#input\_alb\_access\_logs\_table\_name) | The table name for the alb access logs | `string` | `"alb_access_logs"` | no |
-| <a name="input_alb_connection_logs_table_name"></a> [alb\_connection\_logs\_table\_name](#input\_alb\_connection\_logs\_table\_name) | The table name for the alb connection logs | `string` | `"alb_connection_logs"` | no |
-| <a name="input_database_name"></a> [database\_name](#input\_database\_name) | The name of the Athena database. | `string` | n/a | yes |
-| <a name="input_query_results_bucket"></a> [query\_results\_bucket](#input\_query\_results\_bucket) | The S3 bucket where Athena query results will be stored. | `string` | n/a | yes |
-| <a name="input_s3_bucket_name"></a> [s3\_bucket\_name](#input\_s3\_bucket\_name) | The name of the S3 bucket where ALB logs are stored. | `string` | n/a | yes |
-| <a name="input_workgroup_name"></a> [workgroup\_name](#input\_workgroup\_name) | (Required) Name of the workgroup | `string` | n/a | yes |
+| <a name="input_alb_access_logs_table_name"></a> [alb\_access\_logs\_table\_name](#input\_alb\_access\_logs\_table\_name) | (Optional) The name of the Glue Catalog table that will store the parsed ALB access logs | `string` | `"alb_access_logs"` | no |
+| <a name="input_alb_connection_logs_table_name"></a> [alb\_connection\_logs\_table\_name](#input\_alb\_connection\_logs\_table\_name) | (Optional) The name of the Glue Catalog table that will store the parsed ALB connection logs | `string` | `"alb_connection_logs"` | no |
+| <a name="input_database_name"></a> [database\_name](#input\_database\_name) | (Required) The name of the Athena database in the AWS Glue Catalog that will contain the schema definitions for your ALB logs | `string` | n/a | yes |
+| <a name="input_query_results_bucket"></a> [query\_results\_bucket](#input\_query\_results\_bucket) | (Required) The name of the S3 bucket where Athena will store the output of executed queries | `string` | n/a | yes |
+| <a name="input_s3_bucket_name"></a> [s3\_bucket\_name](#input\_s3\_bucket\_name) | (Required) The name of the S3 bucket that holds the raw Application Load Balancer (ALB) logs | `string` | n/a | yes |
+| <a name="input_workgroup_name"></a> [workgroup\_name](#input\_workgroup\_name) | (Required) The name of the Athena workgroup that will manage and isolate query execution and resource usage | `string` | n/a | yes |
 
 ## Outputs
 
