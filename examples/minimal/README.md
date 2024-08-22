@@ -1,4 +1,20 @@
 <!-- BEGIN_TF_DOCS -->
+### Example `terraform.tfvars`
+
+```hcl
+# Name of the Athena workgroup. This workgroup will manage queries and resource usage.
+workgroup_name = "your_athena_workgroup_name"
+
+# The S3 bucket where the results of Athena queries will be stored.
+query_results_bucket = "your_query_results_bucket_name"
+
+# The name of the Glue Catalog Database where ALB logs will be stored.
+database_name = "your_glue_catalog_database_name"
+
+# The name of the S3 bucket where Application Load Balancer (ALB) logs are stored.
+s3_bucket_name = "your_alb_logs_s3_bucket_name"
+```
+
 ## Requirements
 
 | Name | Version |
@@ -11,7 +27,9 @@ No providers.
 
 ## Modules
 
-No modules.
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_athena"></a> [athena](#module\_athena) | ../.. | n/a |
 
 ## Resources
 
@@ -19,7 +37,12 @@ No resources.
 
 ## Inputs
 
-No inputs.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_database_name"></a> [database\_name](#input\_database\_name) | The name of the Athena database. | `string` | n/a | yes |
+| <a name="input_query_results_bucket"></a> [query\_results\_bucket](#input\_query\_results\_bucket) | The S3 bucket where Athena query results will be stored. | `string` | n/a | yes |
+| <a name="input_s3_bucket_name"></a> [s3\_bucket\_name](#input\_s3\_bucket\_name) | The name of the S3 bucket where ALB logs are stored. | `string` | n/a | yes |
+| <a name="input_workgroup_name"></a> [workgroup\_name](#input\_workgroup\_name) | (Required) Name of the workgroup | `string` | n/a | yes |
 
 ## Outputs
 
