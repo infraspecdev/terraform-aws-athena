@@ -1,5 +1,6 @@
 <!-- BEGIN_TF_DOCS -->
 terraform-aws-athena
+This Terraform module automates the setup of AWS Athena to query ALB access and connection logs stored in an S3 bucket.
 
 ## Requirements
 
